@@ -2,17 +2,17 @@ import logo from "../assets/logo.png";
 
 const Header = () => {
   return (
-    <div className="w-full py-4 px-12">
+    <div className="w-full py-4 px-12 font-roboto font-bold">
       <nav className="flex justify-center">
         <ul className="w-4/5 flex justify-between items-center">
           <li>
             <a href="#" className="underline underline-offset-8">
-              ABOUT
+              About
             </a>
           </li>
           <li>
             <a href="#" className="underline underline-offset-8">
-              PROJECTS
+              Projects
             </a>
           </li>
           <li>
@@ -22,12 +22,12 @@ const Header = () => {
           </li>
           <li>
             <a href="#" className="underline underline-offset-8">
-              SKILLS
+              Skills
             </a>
           </li>
           <li>
             <a href="#" className="underline underline-offset-8">
-              EDUCATION
+              Education
             </a>
           </li>
         </ul>
