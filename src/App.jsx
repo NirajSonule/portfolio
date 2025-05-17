@@ -1,25 +1,20 @@
+import Footer from "./components/Footer";
 import Header from "./components/Header";
 import About from "./sections/About";
+import Contact from "./sections/Contact";
+import Education from "./sections/Education";
 import Hero from "./sections/Hero";
+import Skill from "./sections/Skill";
 
 function App() {
   return (
-    <div className="bg-[#0D0917] text-white relative min-h-screen overflow-hidden">
-      {/* White blurry half-circle at the top */}
-      <div className="absolute top-0 left-1/2 transform -translate-x-1/2 z-0 w-[1440px] h-[1024px] pointer-events-none overflow-hidden">
-        <div
-          className="w-full h-full rounded-full"
-          style={{
-            background:
-              "radial-gradient(circle, rgba(255,255,255,0.25), transparent 70%)",
-            filter: "blur(120px)",
-            transform: "translateY(-50%)",
-          }}
-        />
-      </div>
+    <div className="bg-slate-50 pb-8">
       <Header />
       <Hero />
       <About />
+      <Skill />
+      <Education />
+      <Contact />
     </div>
   );
 }
