@@ -8,6 +8,7 @@ import {
   FaFigma,
 } from "react-icons/fa";
 import { SiBlender } from "react-icons/si";
+import { motion } from "framer-motion";
 
 const skills = [
   { name: "HTML", icon: <FaHtml5 className="text-orange-600" /> },
@@ -22,21 +23,36 @@ const skills = [
 
 const Skill = () => {
   return (
-    <section className="w-full flex justify-center mb-8">
-      <div className="bg-white flex flex-col items-center justify-start w-[90%] rounded-lg shadow-lg ring ring-gray-200 p-8">
-        <h2 className="text-2xl font-roboto font-bold mb-8">Skills</h2>
+    <section id="skills" className="w-full flex justify-center mb-8">
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        className="bg-white flex flex-col items-center justify-start w-[90%] rounded-lg shadow-lg ring ring-gray-200 p-8"
+      >
+        <h2 className="text-2xl text-violet-700 font-roboto font-bold mb-8">
+          SKILL'S
+        </h2>
+
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-6">
           {skills.map((skill, index) => (
-            <div
+            <motion.div
               key={index}
-              className="flex flex-col items-center justify-center bg-gray-100 hover:bg-gray-200 transition-all p-4 rounded-lg shadow-md"
+              initial={{ opacity: 0, x: 30 }} // initial state with horizontal movement
+              whileInView={{ opacity: 1, x: 0 }} // visible state with no movement
+              transition={{
+                delay: 0.1 * index, // staggered effect by delay based on index
+                duration: 0.6, // animation duration for each skill
+                ease: "easeOut", // ease-out effect
+              }}
+              className="flex flex-col items-center justify-center bg-gray-100 hover:bg-violet-200 transition-all p-4 rounded-lg shadow-md"
             >
               <div className="text-4xl mb-2">{skill.icon}</div>
               <p className="font-medium">{skill.name}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };
